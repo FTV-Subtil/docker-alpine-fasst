@@ -25,7 +25,7 @@ FROM alpine:3.6
 WORKDIR /app
 
 RUN apk update && \
-    apk add python py-numpy qt libsndfile g++
+    apk add python py-numpy qt libsndfile g++ icu-libs
 
 COPY --from=fasst_builder /app/fasst-2.1.0/build/bin /usr/bin
 COPY --from=fasst_builder /app/fasst-2.1.0/build/scripts/python/fasst.py /app/fasst.py
